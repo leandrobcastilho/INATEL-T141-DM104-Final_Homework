@@ -20,7 +20,7 @@ body {
     margin: 0px;
     padding: 0px;
     height: auto;
-    background-image: url("/images/header_background.png");
+    background-image: url("../images/header_background.png");
     background-repeat: repeat-x;
     background-size: 100px 100%;
 }
@@ -30,14 +30,14 @@ body {
     margin-right: 0px;
     margin-left: 0px;
     padding: 0px;
-    background-image: url("/images/header_logo.png");
+    background-image: url("../images/header_logo.png");
     background-repeat: no-repeat;
     background-size: 100px 100%;
 }
 
 #mainNavBar {
     font-size: 20px;
-    background-image: url("/images/header_background.png");
+    background-image: url("../images/header_background.png");
     background-repeat: repeat-x;
     background-size: 100px 100%;
 }
@@ -57,7 +57,7 @@ body {
 }
 
 .modal-header {
-    background-image: url("/images/header_background.png");
+    background-image: url("../images/header_background.png");
     background-repeat: repeat-x;
     background-size: 100px 100%;
     color: #7e294c;
@@ -211,19 +211,19 @@ body {
 }
 
 #myEmail {
-    background-image: url("/images/Email-icon.png");
+    background-image: url("../images/Email-icon.png");
 }
 
 #myFacebook {
-    background-image: url("/images/Facebook-icon.png");
+    background-image: url("../images/Facebook-icon.png");
 }
 
 #myInstagram {
-    background-image: url("/images/Instagram-icon.png");
+    background-image: url("../images/Instagram-icon.png");
 }
 
 #myWhatsapp {
-    background-image: url("/images/Whatsapp-icon.png");
+    background-image: url("../images/Whatsapp-icon.png");
 }
 
 
@@ -236,7 +236,7 @@ body {
 }
 
 #myMaps {
-    background-image: url("/images/Maps-icon.png");
+    background-image: url("../images/Maps-icon.png");
 }
 
 #address {
