@@ -16,7 +16,7 @@ let ProductMenu = {
             div.id = "product";
             div.className = "col-md-3";
             span.innerHTML = product.category + " - " + product.code + " - " + product.name + " - R$" + product.price;
-            img.src = "/images/products/" + product.imageName;
+            img.src = "./images/products/" + product.imageName;
             img.className = "img-thumbnail";
             img.alt = "Responsive image";
             div.appendChild(img);
@@ -39,7 +39,7 @@ let ProductMenu = {
         let img = document.createElement("img");
         divImg.id = "product";
         divImg.className = "col-md-7";
-        img.src = "/images/products/" + product.imageName;
+        img.src = "./images/products/" + product.imageName;
         img.className = "img-thumbnail";
         img.alt = "Responsive image";
         divImg.appendChild(img);
