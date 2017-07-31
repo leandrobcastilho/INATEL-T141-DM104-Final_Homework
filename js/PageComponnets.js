@@ -264,7 +264,7 @@ let PageComponnets = {
         PageComponnets.cleanNavBarUl();
         let mainNavBarUl = document.getElementById("mainNavBarUl");
         // mainNavBarUl.appendChild(PageComponnets.createLiHome());
-        // mainNavBarUl.appendChild(PageComponnets.createLiContact());
+        mainNavBarUl.appendChild(PageComponnets.createLiContact());
         mainNavBarUl.appendChild(PageComponnets.createLiClientRegister());
         mainNavBarUl.appendChild(PageComponnets.createLiClientLogin());
         mainNavBarUl.appendChild(PageComponnets.createLiAdminLogin());
@@ -275,7 +275,7 @@ let PageComponnets = {
         PageComponnets.cleanNavBarUl();
         let mainNavBarUl = document.getElementById("mainNavBarUl");
         // mainNavBarUl.appendChild(PageComponnets.createLiHome());
-        // mainNavBarUl.appendChild(PageComponnets.createLiContact());
+        mainNavBarUl.appendChild(PageComponnets.createLiContact());
         mainNavBarUl.appendChild(PageComponnets.createLiClientLogoff(clientName));
         mainNavBarUl.appendChild(PageComponnets.createLiOrders());
     },
@@ -285,7 +285,7 @@ let PageComponnets = {
         PageComponnets.cleanNavBarUl();
         let mainNavBarUl = document.getElementById("mainNavBarUl");
         // mainNavBarUl.appendChild(PageComponnets.createLiHome());
-        // mainNavBarUl.appendChild(PageComponnets.createLiContact());
+        mainNavBarUl.appendChild(PageComponnets.createLiContact());
         mainNavBarUl.appendChild(PageComponnets.createLiAdminRegister());
         mainNavBarUl.appendChild(PageComponnets.createLiAdminLogoff(adminName));
     },
