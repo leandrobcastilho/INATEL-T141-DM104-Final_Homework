@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ecommerce-Leandro</title>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <script src="https://www.gstatic.com/charts/loader.js"></script>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+
+    <!--#### MENU HEADER #####################################################################################################-->
+
+    <nav class="navbar navbar-inverse" id="navbar-header">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#mainNavBar" id="buttonHeader">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <!-- <div class="navbar-brand" id="logoHeader" alt="Brand">
+                </div> -->
+                <a class="navbar-brand" id="logoHeader" href="#">
+                    <img alt="Brand" src="/images/header_logo.png" class="img-fluid">
+                </a>
+            </div>
+
+            <!-- Menu Items -->
+            <div class="collapse navbar-collapse" id="mainNavBar">
+                <ul class="nav navbar-nav" id="mainNavBarUl">
+                </ul>
+            </div>
+
+        </div>
+    </nav>
+
+    <!--#########################################################################################################-->
+
+    <div id="wrapper">
+
+        <!--##### LATERAL MENU ####################################################################################################-->
+
+        <!-- Sidebar -->
+        <div class="col-md-2" id="sidebar-wrapper">
+            <div class="container-fluid">
+                <ul class="sidebar-nav" id="lateralMenu">
+                </ul>
+            </div>
+        </div>
+
+        <!--##### CONTENT ####################################################################################################-->
+
+        <!-- Page content -->
+        <div class="col-md-10" id="page-content-wrapper">
+            <div class="container-fluid" id="pageContent">
+                <!--
+                <div id="contentRow" class="row">
+                    <div class="col-md-3"></div>
+                </div>
+                 -->
+                <!--
+                <table id="tableReport" class="table table-bordered table-striped">
+                    <caption id="tableReportCaption">Report Table</caption>
+                    <thead id="tableReporThead">
+                        <tr>
+                            <th>Name</th>
+                            <th>E-mail</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tableReportBody"></tbody>
+                </table>
+                -->
+            </div>
+
+        </div>
+
+    </div>
+
+    <!--##### FOOTER ####################################################################################################-->
+
+    <div class="footer" id="footer">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-2" id="social">
+                    <button type="button" class="btn" id="myEmail" href="#"></button>
+                    <button type="button" class="btn" id="myFacebook" href="#"></button>
+                    <button type="button" class="btn" id="myInstagram" href="#"></button>
+                    <button type="button" class="btn" id="myWhatsapp" href="#" data-toggle="modal" data-target="#whatsappPopUpWindow"></button>
+                    <div class="modal fade" id="whatsappPopUpWindow">
+                        <div class="modal-dialog">
+                            <div class="modal-content col-md-6">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                    <h3 class="modal-title">(035) 98806 1631</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button type="button" class="btn" id="myMaps" href="#" data-toggle="modal" data-target="#mapsPopUpWindow"></button>
+                </div>
+
+                <div class="col-md-10" id="address">
+                    <a href="#" data-toggle="modal" data-target="#mapsPopUpWindow">Rua São Francisco nº 202 <br/> Santa Rita do Sapucaí - MG</a>
+                    <div class="modal fade" id="mapsPopUpWindow">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                    <div class="row-fluid">
+                                        <div class="span8">
+                                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3693.013330982402!2d-45.71149048504636!3d-22.23957298535522!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94cba3ac002d89df%3A0x15e40066eb87b34a!2sR.+S%C3%A3o+Francisco%2C+202+-+Boa+Vista+2%2C+Santa+Rita+do+Sapuca%C3%AD+-+MG%2C+37540-000!5e0!3m2!1sen!2sbr!4v1500251868724"
+                                                width="550" height="350" frameborder="0" style="border:0" allowfullscreen></iframe>
+                                            <!-- <iframe width="100%" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.co.uk/maps?f=q&source=s_q&hl=en&geocode=&q=10+Rue+de+Rome&sll=48.874650,2.325336&ie=UTF8&hq=&hnear=10+RUE+DE+ROME,+75008,+FRANCE&t=m&z=17&ll=48.875350,2.325336&output=embed"></iframe> -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--##### DIALOG ####################################################################################################-->
+
+    <div class="modal fade" id="contactPopUpWindow">
+        <div class="modal-dialog">
+            <div class="modal-content col-md-12">
+
+                <!-- header -->
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h3 class="modal-title text-center">Contact</h3>
+                </div>
+
+                <!-- body (form) -->
+                <div class="modal-body">
+                    <ul>
+                        <li>
+                            <a href="mailto:casinhadeflores@gmail.com"> <img src="/images/Email-icon.png" alt="..."> casinhadeflores@gmail.com</a>
+                        </li>
+                        <li>
+                            <a href="https://www.facebook.com/ateliecasinhadeflores/"> <img src="/images/Facebook-icon.png" alt="..."> /ateliecasinhadeflores</a>
+                        </li>
+                        <li>
+                            <a href="https://www.instagram.com/anaanderi/"> <img src="/images/Instagram-icon.png" alt="..."> /anaanderi</a>
+                        </li>
+                        <li>
+                            <a href="#"> <img src="/images/Whatsapp-icon.png" alt="..."> (035) 98806 1631</a>
+                        </li>
+                        <li>
+                            <a href="#" data-toggle="modal" data-target="#mapsPopUpWindow"> <img src="/images/Maps-icon.png" alt="..."> Rua São Francisco nº 202 -Santa Rita do Sapucaí-MG</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="clientRegiterPopUpWindow">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <!-- header -->
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h3 class="modal-title text-center">Client Register</h3>
+                </div>
+
+                <!-- body (form) -->
+                <div class="modal-body">
+                    <form role="form">
+                        <div class="form-group">
+                            <input id="registerClientName" type="text" class="form-control" placeholder="Name">
+                        </div>
+                        <div class="form-group">
+                            <input id="registerClientEmail" type="email" class="form-control" placeholder="Email">
+                        </div>
+                        <div class="form-group">
+                            <input id="registerClientPassword" type="password" class="form-control" placeholder="Password">
+                        </div>
+                    </form>
+                </div>
+
+                <!-- button -->
+                <div class="modal-footer">
+                    <button class="btn btn-primary btn-block" id="btnClientRegister">Register</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="clientLoginPopUpWindow">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <!-- header -->
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h3 class="modal-title text-center">Client Log-In</h3>
+                </div>
+
+                <!-- body (form) -->
+                <div class="modal-body">
+                    <form role="form">
+                        <div class="form-group">
+                            <input id="clientEmail" type="email" class="form-control" placeholder="Email">
+                        </div>
+                        <div class="form-group">
+                            <input id="clientPassword" type="password" class="form-control" placeholder="Password">
+                        </div>
+                    </form>
+                </div>
+
+                <!-- button -->
+                <div class="modal-footer">
+                    <button class="btn btn-primary btn-block" id="btnClientLogin">Check</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="adminLoginPopUpWindow">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <!-- header -->
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h3 class="modal-title text-center">Admin Log-In</h3>
+                </div>
+
+                <!-- body (form) -->
+                <div class="modal-body">
+                    <form role="form">
+                        <div class="form-group">
+                            <input id="adminLogin" type="text" class="form-control" placeholder="Login">
+                        </div>
+                        <div class="form-group">
+                            <input id="adminPassword" type="password" class="form-control" placeholder="Password">
+                        </div>
+                    </form>
+                </div>
+
+                <!-- button -->
+                <div class="modal-footer">
+                    <button class="btn btn-primary btn-block" id="btnAdminLogin">Check</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="adminRegiterPopUpWindow">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <!-- header -->
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h3 class="modal-title text-center">Admin Register</h3>
+                </div>
+
+                <!-- body (form) -->
+                <div class="modal-body">
+                    <form role="form">
+                        <div class="form-group">
+                            <input id="registerAdminLogin" type="text" class="form-control" placeholder="Login">
+                        </div>
+                        <div class="form-group">
+                            <input id="registerAdminPassword" type="password" class="form-control" placeholder="Password">
+                        </div>
+                    </form>
+                </div>
+
+                <!-- button -->
+                <div class="modal-footer">
+                    <button class="btn btn-primary btn-block" id="btnAdminRegister">Register</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="adminEditPopUpWindow">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <!-- header -->
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h3 class="modal-title text-center">Admin Edit</h3>
+                </div>
+
+                <!-- body (form) -->
+                <div class="modal-body">
+                    <form role="form">
+                        <div class="form-group">
+                            <label>Login: </label>
+                            <span id="editAdminLogin">Login</span>
+                        </div>
+                        <div class="form-group">
+                            <input id="editAdminPassword" type="password" class="form-control" placeholder="New Password">
+                        </div>
+                    </form>
+                </div>
+
+                <!-- button -->
+                <div class="modal-footer">
+                    <button class="btn btn-primary btn-block" id="btnAdminEdit">Update</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="productEditPopUpWindow">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <!-- header -->
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h3 class="modal-title text-center">Product Edit</h3>
+                </div>
+
+                <!-- body (form) -->
+                <div class="modal-body">
+                    <form role="form">
+                        <div class="form-group">
+                            <label>Category: </label>
+                            <span id="editProductCategory">Category</span>
+                            <label> Code: </label>
+                            <span id="editProductCode">Code</span>
+                        </div>
+                        <div class="form-group">
+                            <input id="editProductName" type="text" class="form-control" placeholder="New Name">
+                        </div>
+                        <div class="form-group">
+                            <input id="editProductDescription" type="text" class="form-control" placeholder="New Description">
+                        </div>
+                        <div class="form-group">
+                            <input id="editProductPrice" type="number" class="form-control" placeholder="New Price">
+                        </div>
+                    </form>
+                </div>
+
+                <!-- button -->
+                <div class="modal-footer">
+                    <button class="btn btn-primary btn-block" id="btnProductEdit">Update</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!--################################################################################################################-->
+
+    <script src="/js/Debug.js"></script>
+    <script src="/js/SessionFakeAdmin.js"></script>
+    <script src="/js/SessionFakeClient.js"></script>
+    <script src="/js/SessionFakeOrder.js"></script>
+
+    <script src="/js/AdminDB.js"></script>
+    <script src="/js/ClientDB.js"></script>
+    <script src="/js/ProductDB.js"></script>
+    <script src="/js/OrderDB.js"></script>
+    <script src="/js/OrderProdutcDB.js"></script>
+    <script src="/js/OrderControler.js"></script>
+
+    <script src="/js/PageComponnets.js"></script>
+    <script src="/js/ProductMenu.js"></script>
+    <script src="/js/ReportAdmin.js"></script>
+    <script src="/js/ReportClient.js"></script>
+    <script src="/js/ReportProduct.js"></script>
+    <script src="/js/ReportOrder.js"></script>
+    <script src="/js/ClientPage.js"></script>
+    <script src="/js/AdminPage.js"></script>
+    <script src="/js/index.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,250 @@
+body {
+    background-color: #f98ea8;
+}
+
+#navbar-header {
+    color: #29b3b1;
+    margin: 0px;
+    height: auto;
+}
+
+#navbar-header .container-fluid {
+    color: #29b3b1;
+    margin: 0px;
+    padding: 0px;
+    height: auto;
+}
+
+.navbar-header {
+    color: #29b3b1;
+    margin: 0px;
+    padding: 0px;
+    height: auto;
+    background-image: url("/images/header_background.png");
+    background-repeat: repeat-x;
+    background-size: 100px 100%;
+}
+
+.navbar-brand {
+    height: 100%;
+    margin-right: 0px;
+    margin-left: 0px;
+    padding: 0px;
+    background-image: url("/images/header_logo.png");
+    background-repeat: no-repeat;
+    background-size: 100px 100%;
+}
+
+#mainNavBar {
+    font-size: 20px;
+    background-image: url("/images/header_background.png");
+    background-repeat: repeat-x;
+    background-size: 100px 100%;
+}
+
+#mainNavBar ul {
+    margin-left: 25px;
+    margin-top: 25px;
+}
+
+#mainNavBar ul li a {
+    color: #29b3b1;
+}
+
+.navbar-inverse .navbar-toggle {
+    border-color: white;
+    margin: 25px;
+}
+
+.modal-header {
+    background-image: url("/images/header_background.png");
+    background-repeat: repeat-x;
+    background-size: 100px 100%;
+    color: #7e294c;
+}
+
+.modal-body {
+    background-color: #f98ea8;
+    padding-top: 5px;
+    padding-right: 5px;
+    padding-bottom: 10px;
+    padding-left: 5px;
+}
+
+.modal-footer {
+    background-color: #c34c7e;
+}
+
+.modal-footer .btn-primary {
+    background-color: #7e294c;
+    border-color: #7e294c;
+    color: black;
+}
+
+#contactPopUpWindow ul {
+    list-style-type: none;
+    padding: 0px;
+}
+
+#contactPopUpWindow ul li a {
+    color: #7e294c;
+}
+
+
+/* ############################################################### */
+
+#wrapper {
+    min-height: 80%;
+}
+
+#page-content-wrapper {
+    min-height: 80%;
+}
+
+#page-content-wrapper {
+    background-color: #fce3ed;
+}
+
+#sidebar-wrapper .container-fluid {
+    min-height: 80%;
+    height: 100%;
+}
+
+#sidebar-wrapper {
+    padding-left: 0px;
+    padding-right: 0px;
+    background-color: #f98ea8;
+    min-height: 80%;
+    height: 100%;
+    z-index: 1;
+    font-size: 21px;
+}
+
+#sidebar-wrapper ul {
+    padding: 5px;
+    margin: 0px;
+    width: 100%;
+    list-style-type: none;
+}
+
+.sidebar-nav li {
+    width: 100%;
+}
+
+.sidebar-nav li a {
+    display: block;
+    text-decoration: none;
+    color: #8E2F57;
+}
+
+.sidebar-nav li a:hover {
+    width: 100%;
+    background: #c34c7e;
+    color: black;
+}
+
+
+/* ############################################################### */
+
+#displayContent {
+    min-height: 80%;
+}
+
+#product {
+    padding: 10px;
+    height: auto;
+}
+
+
+/* ############################################################### */
+
+#tableReportCaption {
+    margin-top: 10px;
+    background-color: #F98EA8;
+    color: #C34C7E;
+    font-size: 20px;
+    padding: 10px;
+}
+
+#tableReportThead {
+    background-color: #D7F6F7;
+    color: #29b3b1;
+}
+
+#tableReportTbody {
+    color: #29b3b1;
+}
+
+
+/* ############################################################### */
+
+#footer {
+    min-height: 60px;
+    width: 100%;
+    /* position: absolute; */
+    bottom: 0;
+}
+
+#footer .container-fluid {
+    height: 100%;
+    width: 100%;
+    /* position: relative; */
+    /* background-color: #D6E167; */
+}
+
+#social {
+    height: 60px;
+    background-color: #c34c7e;
+    padding-right: 0px;
+    padding-left: 0px;
+}
+
+#social .btn {
+    background-color: #C34C7E;
+    height: 100%;
+    min-width: 35px;
+    float: left;
+    margin-left: 3%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+}
+
+#myEmail {
+    background-image: url("/images/Email-icon.png");
+}
+
+#myFacebook {
+    background-image: url("/images/Facebook-icon.png");
+}
+
+#myInstagram {
+    background-image: url("/images/Instagram-icon.png");
+}
+
+#myWhatsapp {
+    background-image: url("/images/Whatsapp-icon.png");
+}
+
+
+/* #whatsappPopUpWindow .modal-title {
+    color: 7e294c;
+} */
+
+#whatsappPopUpWindow .modal-content {
+    background-color: #b83d70;
+}
+
+#myMaps {
+    background-image: url("/images/Maps-icon.png");
+}
+
+#address {
+    text-align: left;
+    padding: 0.5% 3%;
+    background-color: #D6E167;
+    height: 60px;
+    text-decoration: none;
+    font-size: 16px;
+    color: #29b3b1;
+}

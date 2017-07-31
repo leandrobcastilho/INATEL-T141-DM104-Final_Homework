@@ -1,0 +1,21 @@
+{
+    "name": "Ecommerce",
+    "version": "1.0.0",
+    "description": "Ecommerce",
+    "config": {
+        "hot": "localhost",
+        "port": 8080
+    },
+    "scripts": {
+        "start": "node ./app/index"
+    },
+    "author": "leandro",
+    "license": "MIT",
+    "dependencies": {
+        "body-parser": "^1.17.2",
+        "bootstrap": "^3.3.7",
+        "express": "^4.15.3",
+        "normalize.css": "^7.0.0",
+        "useful-string": "0.0.2"
+    }
+}
