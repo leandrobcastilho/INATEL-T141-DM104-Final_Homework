@@ -112,12 +112,6 @@ let ProductMenu = {
                 productQtd = formProductQtd.value;
             SessionFakeOrder.setProduct_SF(productCode, productQtd);
             let product = ProductDB.getProductByCode(productCode);
-            // if (confirm("Return Shoping!") == true) {
-            //     ProductMenu.loadProducts(product.category);
-            // } else {
-            //     ProductMenu.showCartProduct(product.category);
-            // }
-            // ProductMenu.loadProducts(product.category);
             ProductMenu.showCartProduct(product.category);
         } else {
             $('#clientLoginPopUpWindow').modal('show');
@@ -127,7 +121,7 @@ let ProductMenu = {
     showCartProduct: function(category) {
         Debug.print("showCartProduct()");
         PageComponnets.cleanContentRow();
-        ClientPage.refreshCountOrderClient();
+        ClientPage.refreshCountCartClient();
         let contentRow = document.getElementById("contentRow");
 
         let orderProducts_SF = SessionFakeOrder.getOrderProductList_SF();
@@ -283,7 +277,7 @@ let ProductMenu = {
         if (orderProducts_SF.length > 0 && orderProducts_SF[0].productCode != 0) {
             OrderControler.createOrder();
             SessionFakeOrder.cleanOrderProduct_SF();
-            ClientPage.refreshCountOrderClient();
+            ClientPage.refreshCountCartClient();
             ProductMenu.loadProducts("");
         } else {
             Debug.print("alert");
@@ -313,4 +307,179 @@ let ProductMenu = {
             ProductMenu.showCartProduct(product.category);
         }
     },
+
+    showOrdersClient: function() {
+        Debug.print("showOrdersClient()");
+        PageComponnets.cleanContentRow();
+
+        let contentRow = document.getElementById("contentRow");
+
+        let clientLogin = SessionFakeClient.getClient_SF();
+        let client = ClientDB.getClientByEmail(clientLogin.email);
+        let orders = OrderDB.getOrderListByClientCode(client.code);
+
+        let divDesc = document.createElement("div");
+        divDesc.id = "odersClient";
+        divDesc.className = "col-md-3";
+        contentRow.appendChild(divDesc);
+
+        let divProduct = document.createElement("div");
+        let table = ProductMenu.createTableOrdersClient(orders);
+        divProduct.appendChild(table);
+        contentRow.appendChild(divProduct);
+    },
+
+    createTableOrdersClient: function(orders) {
+
+        let table = document.createElement("table");
+        table.id = "tableReport";
+        table.className = "table table-bordered table-striped";
+
+        let caption = document.createElement("caption");
+        caption.id = "tableReportCaption";
+        caption.innerText = "Orders";
+        table.appendChild(caption);
+
+        let thead = document.createElement("thead");
+        thead.id = "tableReportThead";
+
+        let tr = document.createElement("tr");
+        let thOrderCode = document.createElement("th");
+        let thFormateDate = document.createElement("th");
+        let thClientName = document.createElement("th");
+        let thTotalOrder = document.createElement("th");
+
+        thOrderCode.innerHTML = 'Order';
+        thFormateDate.innerHTML = 'Date';
+        thClientName.innerHTML = 'Client';
+        thTotalOrder.innerHTML = 'Total';
+
+        tr.appendChild(thOrderCode);
+        tr.appendChild(thFormateDate);
+        tr.appendChild(thClientName);
+        tr.appendChild(thTotalOrder);
+        thead.appendChild(tr);
+        table.appendChild(thead);
+
+        let tbody = document.createElement("tbody");
+        tbody.id = "tableOrdersClientTbody";
+
+        for (let index = 0; index < orders.length; index++) {
+            if (orders[index].code != 0) {
+                let order = orders[index];
+                let code = order.code;
+                let formateDate = new Date(order.date);
+                let client = ClientDB.getClientByCode(order.clientCode);
+                let clientName = client.name;
+                let totalOrder = order.total;
+                tbody.appendChild(ProductMenu.creatTableRowOrdersClient(code, formateDate, clientName, totalOrder));
+                tbody.appendChild(ProductMenu.createTableProductOrderClient(code));
+            }
+        }
+        table.appendChild(tbody);
+
+        return table;
+    },
+
+    creatTableRowOrdersClient: function(orderCode, formateDate, clientName, totalOrder) {
+
+        let tr = document.createElement("tr");
+        let tdOrderCode = document.createElement("td");
+        let tdFormateDate = document.createElement("td");
+        let tdClientName = document.createElement("td");
+        let tdTotalOrder = document.createElement("td");
+
+        tdOrderCode.innerHTML = orderCode;
+        tdFormateDate.innerHTML = formateDate;
+        tdClientName.innerHTML = clientName;
+        tdTotalOrder.innerHTML = totalOrder;
+
+        tr.appendChild(tdOrderCode);
+        tr.appendChild(tdFormateDate);
+        tr.appendChild(tdClientName);
+        tr.appendChild(tdTotalOrder);
+        return tr;
+    },
+
+    createTableProductOrderClient: function(orderCode) {
+
+        let trSubTable = document.createElement("tr");
+        let tdSub = document.createElement("td");
+        let tdSubTable = document.createElement("td");
+
+        let table = document.createElement("table");
+        table.id = "tableReport";
+        table.className = "table table-bordered table-striped";
+
+        // let caption = document.createElement("caption");
+        // caption.id = "tableReportCaption";
+        // caption.innerText = "Products Order";
+        // table.appendChild(caption);
+
+        let thead = document.createElement("thead");
+        thead.id = "tableReportThead";
+
+        let tr = document.createElement("tr");
+        let thCode = document.createElement("th");
+        let thName = document.createElement("th");
+        let thPrice = document.createElement("th");
+        let thQtd = document.createElement("th");
+        let thTotal = document.createElement("th");
+
+        thCode.innerHTML = 'Code';
+        thName.innerHTML = 'Name';
+        thPrice.innerHTML = 'Price';
+        thQtd.innerHTML = 'Qtd';
+        thTotal.innerHTML = 'Total';
+
+        tr.appendChild(thCode);
+        tr.appendChild(thName);
+        tr.appendChild(thPrice);
+        tr.appendChild(thQtd);
+        tr.appendChild(thTotal);
+        thead.appendChild(tr);
+        table.appendChild(thead);
+
+        let tbody = document.createElement("tbody");
+        tbody.id = "tableReportTbody";
+
+        let orderProducts = OrderControler.getProductListByOrder(orderCode);
+
+        for (let index = 0; index < orderProducts.length; index++) {
+            if (orderProducts[index].productCode != 0)
+                tbody.appendChild(ProductMenu.creatTableRowProduct(orderProducts[index].productCode, orderProducts[index].price, orderProducts[index].productQtd));
+        }
+        table.appendChild(tbody);
+
+        tdSubTable.appendChild(table);
+
+        trSubTable.appendChild(tdSub);
+        trSubTable.appendChild(tdSubTable);
+        return trSubTable;
+    },
+
+    creatTableRowProduct: function(productCode, price, productQtd) {
+
+        let tr = document.createElement("tr");
+        let tdCode = document.createElement("td");
+        let tdName = document.createElement("td");
+        let tdPrice = document.createElement("td");
+        let tdQtd = document.createElement("td");
+        let tdTotal = document.createElement("td");
+
+        tdCode.innerHTML = productCode;
+        let product = ProductDB.getProductByCode(productCode);
+        tdName.innerHTML = product.name;
+        tdPrice.innerHTML = price;
+        tdQtd.innerHTML = productQtd;
+        tdTotal.innerHTML = (price * productQtd);
+
+        tr.appendChild(tdCode);
+        tr.appendChild(tdName);
+        tr.appendChild(tdPrice);
+        tr.appendChild(tdQtd);
+        tr.appendChild(tdTotal);
+        return tr;
+    },
+
 };

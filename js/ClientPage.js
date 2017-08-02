@@ -22,7 +22,7 @@ let ClientPage = {
             SessionFakeAdmin.logoffAdmin_SF();
             $('#clientLoginPopUpWindow').modal('hide');
             PageComponnets.navbarClientLogoff(client.name);
-            ClientPage.refreshCountOrderClient();
+            ClientPage.refreshCountCartClient();
         } else {
             Debug.print("alert");
             alert("Email or Password invalid");
@@ -45,17 +45,17 @@ let ClientPage = {
         if (ClientDB.checkClient(clientLogin.email, clientLogin.password)) {
             let client = ClientDB.getClientByEmail(clientLogin.email);
             PageComponnets.navbarClientLogoff(client.name);
-            ClientPage.refreshCountOrderClient();
+            ClientPage.refreshCountCartClient();
         } else {
             PageComponnets.navbarClientLogin();
         }
     },
 
-    refreshCountOrderClient: function() {
-        Debug.print("refreshCountOrderClient()");
+    refreshCountCartClient: function() {
+        Debug.print("refreshCountCartClient()");
         let count = SessionFakeOrder.countProductOrderProduct_SF();
-        let orderClient = document.getElementById("orderClient");
-        orderClient.innerHTML = "Cart(" + count + ")";
+        let cartClient = document.getElementById("cartClient");
+        cartClient.innerHTML = "Cart(" + count + ")";
     },
 
     /////////////////////////////////////////////////////////////////////////

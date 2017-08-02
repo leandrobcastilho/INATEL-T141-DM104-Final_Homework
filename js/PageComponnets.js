@@ -192,10 +192,25 @@ let PageComponnets = {
         let a = document.createElement("a");
         a.href = "#";
         a.setAttribute("data-toggle", "modal");
-        a.id = "orderClient";
+        a.id = "cartClient";
         a.innerHTML = "Cart";
         a.onclick = function() {
             ProductMenu.showCartProduct("", a);
+        };
+        li.appendChild(a);
+        return li;
+    },
+
+    createLiOrders: function() {
+        Debug.print("createLiOrders()");
+        let li = document.createElement("li");
+        let a = document.createElement("a");
+        a.href = "#";
+        a.setAttribute("data-toggle", "modal");
+        a.id = "orderClient";
+        a.innerHTML = "Orders";
+        a.onclick = function() {
+            ProductMenu.showOrdersClient(a);
         };
         li.appendChild(a);
         return li;
@@ -278,6 +293,7 @@ let PageComponnets = {
         mainNavBarUl.appendChild(PageComponnets.createLiContact());
         mainNavBarUl.appendChild(PageComponnets.createLiClientLogoff(clientName));
         mainNavBarUl.appendChild(PageComponnets.createLiCart());
+        mainNavBarUl.appendChild(PageComponnets.createLiOrders());
     },
 
     navbarAdminLogoff: function(adminName) {
