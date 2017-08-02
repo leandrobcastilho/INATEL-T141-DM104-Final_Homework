@@ -186,14 +186,14 @@ let PageComponnets = {
         return li;
     },
 
-    createLiOrders: function() {
-        Debug.print("createLiOrders()");
+    createLiCart: function() {
+        Debug.print("createLiCart()");
         let li = document.createElement("li");
         let a = document.createElement("a");
         a.href = "#";
         a.setAttribute("data-toggle", "modal");
         a.id = "orderClient";
-        a.innerHTML = "Orders";
+        a.innerHTML = "Cart";
         a.onclick = function() {
             ProductMenu.showCartProduct("", a);
         };
@@ -277,7 +277,7 @@ let PageComponnets = {
         // mainNavBarUl.appendChild(PageComponnets.createLiHome());
         mainNavBarUl.appendChild(PageComponnets.createLiContact());
         mainNavBarUl.appendChild(PageComponnets.createLiClientLogoff(clientName));
-        mainNavBarUl.appendChild(PageComponnets.createLiOrders());
+        mainNavBarUl.appendChild(PageComponnets.createLiCart());
     },
 
     navbarAdminLogoff: function(adminName) {

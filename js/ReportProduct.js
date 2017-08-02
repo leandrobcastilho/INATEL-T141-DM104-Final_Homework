@@ -44,8 +44,7 @@ let ReportProduct = {
         btnDelete.setAttribute("data-productCode", code);
         btnDelete.onclick = function() {
             let productCode = btnDelete.getAttribute('data-productCode');
-            ProductDB.deleteProduct(productCode, btnDelete);
-            ReportProduct.loadProductTable();
+            ReportProduct.deleteProduct(productCode, btnDelete);
         };
 
         tdBtns.appendChild(btnEdit);
@@ -97,6 +96,15 @@ let ReportProduct = {
             editProductDescription.value = product.description;
             editProductPrice.value = product.price;
             $('#productEditPopUpWindow').modal('show');
+        }
+
+    },
+
+    deleteProduct: function(code) {
+        let product = ProductDB.getProductByCode(code);
+        if (product != null) {
+            ProductDB.deleteProduct(product.code);
+            ReportProduct.loadProductTable();
         }
 
     },

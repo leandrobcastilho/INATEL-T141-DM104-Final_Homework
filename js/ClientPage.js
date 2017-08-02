@@ -55,7 +55,7 @@ let ClientPage = {
         Debug.print("refreshCountOrderClient()");
         let count = SessionFakeOrder.countProductOrderProduct_SF();
         let orderClient = document.getElementById("orderClient");
-        orderClient.innerHTML = "Orders(" + count + ")";
+        orderClient.innerHTML = "Cart(" + count + ")";
     },
 
     /////////////////////////////////////////////////////////////////////////

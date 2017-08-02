@@ -1,4 +1,4 @@
-let DB_PRODUCT = "DB_PRODUCT";
+let DB_PRODUCT = "dbProduct";
 
 let products = [
     { code: 1, name: "babador_1", description: "babador", price: 25.00, imageName: "babador_1.jpg", category: "Babadores" },
@@ -127,7 +127,7 @@ let ProductDB = {
         Debug.print("deleteProduct()");
         let index = ProductDB.getIndexProductByCode(code);
         if (index >= 0) {
-            ProductDB.products.splice(index, 1);
+            products.splice(index, 1);
             ProductDB.saveProduct();
             ProductDB.retrieveProduct();
         }
