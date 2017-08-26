@@ -137,9 +137,9 @@ let ProductDB = {
         Debug.print("editProduct()");
         let index = ProductDB.getIndexProductByCode(code);
         if (index >= 0) {
-            ProductDB.products[index].name = name;
-            ProductDB.products[index].description = description;
-            ProductDB.products[index].price = price;
+            products[index].name = name;
+            products[index].description = description;
+            products[index].price = price;
             ProductDB.saveProduct();
             ProductDB.retrieveProduct();
         }
